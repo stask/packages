@@ -25,7 +25,7 @@
          '[boot.tmpdir :as tmpd])
 
 (deftask generate-deps []
-  (let [tmp (c/temp-dir!)
+  (let [tmp (c/tmp-dir!)
         new-deps-file (io/file tmp "deps.cljs")
         path->foreign-lib (fn [path]
                             (let [[_ kind dep] (re-matches #"cljsjs/codemirror/common/(.*)/(.*).inc.js"
